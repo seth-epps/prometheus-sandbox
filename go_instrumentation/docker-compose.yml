@@ -1,0 +1,36 @@
+services:
+  boilerplate:
+    build: ./boilerplate
+    ports:
+      - 8001:8001
+    environment:
+      - APP_LISTENING_PORT=8001
+  counter:
+    build: ./counter
+    ports:
+      - 8002:8002
+    environment:
+      - APP_LISTENING_PORT=8002
+  gauge:
+    build: ./gauge
+    ports:
+      - 8003:8003
+    environment:
+      - APP_LISTENING_PORT=8003
+  histogram:
+    build: ./histogram
+    ports:
+      - 8004:8004
+    environment:
+      - APP_LISTENING_PORT=8004
+  summary:
+    build: ./summary
+    ports:
+      - 8005:8005
+    environment:
+      - APP_LISTENING_PORT=8005
+
+networks:
+  default:
+    name: prom_net
+    external: true
